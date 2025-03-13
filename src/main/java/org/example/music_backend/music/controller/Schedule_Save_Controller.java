@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.net.URLDecoder;
+import java.nio.charset.StandardCharsets;
 import java.time.LocalDateTime;
 
 @RestController
@@ -15,11 +17,13 @@ public class Schedule_Save_Controller {
 
     @PostMapping("/schedule/save")
     public String Schedule_Save(@RequestParam String name, @RequestParam LocalDateTime date, @RequestParam String schedule) {
-        //try{
+        try{
+            name = URLDecoder.decode(name, StandardCharsets.UTF_8);
+            schedule = URLDecoder.decode(schedule, StandardCharsets.UTF_8);
             schedule_save_service.Schedule_Save(name, date, schedule);
         return "Schedule saved successfully!";
-        //}catch(Exception e){
-           // return "Schedule save failed!";
-        //}
+        }catch(Exception e){
+            return "Schedule save failed!";
+        }
     }
 }

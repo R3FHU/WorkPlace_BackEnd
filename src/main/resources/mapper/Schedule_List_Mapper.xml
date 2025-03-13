@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.example.music_backend.music.mapper.Schedule_List_Mapper">
+
+    <select id="Get_Schedule_List"  resultType="org.example.music_backend.music.model.Schedule">
+        SELECT schedule.name,schedule.date,schedule.schedule FROM schedule LIMIT #{offset}, #{size}
+    </select>
+    <select id="Get_Schedule_List_Count" resultType="int">
+        SELECT COUNT(*) FROM schedule
+    </select>
+
+</mapper>
