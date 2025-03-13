@@ -3,7 +3,7 @@
 <mapper namespace="org.example.music_backend.music.mapper.Schedule_Save_Mapper">
 
     <!-- 查询分页数据 -->
-    <insert id="saveSchedule" parameterType="map">
+    <insert id="Schedule_Save" parameterType="map">
         INSERT INTO schedule (id, name, date, schedule)
         VALUES (#{id}, #{name}, #{date}, #{schedule})
     </insert>

@@ -2,12 +2,12 @@ package org.example.music_backend.music.model;
 
 import lombok.Data;
 
-import java.sql.Date;
+import java.time.LocalDateTime;
 
 @Data
 public class Schedule {
-    private int id;
+    private String id;
     private String name;
-    private Date date;
+    private LocalDateTime date;
     private String schedule;
 }

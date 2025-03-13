@@ -30,7 +30,7 @@ public class Music_Controller {
             return ResponseEntity.ok(url);
         } catch (Exception e) {
             // 捕获异常并返回 500 Internal Server Error
-            return ResponseEntity.status(500).body("Error occurred: " + e.getMessage());
+            return ResponseEntity.status(500).body("出错啦：" + e.getMessage());
         }
     }
 }

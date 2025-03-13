@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.sql.Date;
+import java.time.LocalDateTime;
 
 @RestController
 public class Schedule_Save_Controller {
@@ -14,12 +14,12 @@ public class Schedule_Save_Controller {
     private Schedule_Save_Service schedule_save_service;
 
     @PostMapping("/schedule/save")
-    public String Schedule_Save(@RequestParam String name, @RequestParam Date date, @RequestParam String schedule) {
-        try{
+    public String Schedule_Save(@RequestParam String name, @RequestParam LocalDateTime date, @RequestParam String schedule) {
+        //try{
             schedule_save_service.Schedule_Save(name, date, schedule);
         return "Schedule saved successfully!";
-        }catch(Exception e){
-            return "Schedule save failed!";
-        }
+        //}catch(Exception e){
+           // return "Schedule save failed!";
+        //}
     }
 }
