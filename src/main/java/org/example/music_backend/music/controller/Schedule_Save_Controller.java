@@ -26,7 +26,7 @@ public class Schedule_Save_Controller {
         String content = schedule.getSchedule();
         try{
             schedule_save_service.Schedule_Save(name, date, content);
-        return new Response<>(ResponseStatus.SUCCESS,"成功啦！",null);
+        return new Response<>(ResponseStatus.SUCCESS,"成功啦！",schedule.getId());
         }catch(Exception e){
             return new Response<>(ResponseStatus.INTERNAL_ERROR,e.getMessage(),null);
         }
