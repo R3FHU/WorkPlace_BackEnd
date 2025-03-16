@@ -38,6 +38,11 @@
             <version>5.4.0</version>
         </dependency>
         <dependency>
+            <groupId>com.monitorjbl</groupId>
+            <artifactId>xlsx-streamer</artifactId>
+            <version>2.2.0</version>
+        </dependency>
+        <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>1.18.36</version> <!-- 请根据需要使用最新版本 -->
