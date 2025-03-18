@@ -3,7 +3,7 @@
 <mapper namespace="org.example.music_backend.music.mapper.Schedule_List_Mapper">
 
     <select id="Get_Schedule_List"  resultType="org.example.music_backend.music.model.Schedule">
-        SELECT schedule.name,schedule.date,schedule.schedule FROM schedule LIMIT #{offset}, #{size}
+        SELECT * FROM schedule LIMIT #{offset}, #{size}
     </select>
     <select id="Get_Schedule_List_Count" resultType="int">
         SELECT COUNT(*) FROM schedule

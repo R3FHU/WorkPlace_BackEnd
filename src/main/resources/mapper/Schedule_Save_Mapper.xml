@@ -4,8 +4,8 @@
 
     <!-- 查询分页数据 -->
     <insert id="Schedule_Save" parameterType="map">
-        INSERT INTO schedule (id, name, date, schedule)
-        VALUES (#{id}, #{name}, #{date}, #{schedule})
+        INSERT INTO schedule
+        VALUES (#{id}, #{name}, #{date}, #{schedule},#{font},#{size},#{position},#{isbold},#{isitalic},#{color})
     </insert>
 
 

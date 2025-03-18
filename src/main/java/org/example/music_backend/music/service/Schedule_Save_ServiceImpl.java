@@ -14,8 +14,8 @@ public class Schedule_Save_ServiceImpl implements Schedule_Save_Service {
     private Schedule_Save_Mapper schedule_save_mapper;
 
     @Override
-    public void Schedule_Save(String name, LocalDateTime date, String schedule) {
+    public void Schedule_Save(String name, LocalDateTime date, String schedule,String font,String size,String position,Boolean isbold,Boolean isitalic,String color) {
         String id = UUID.randomUUID().toString().replace("-", ""); // 生成UUID
-        schedule_save_mapper.Schedule_Save(name, date, schedule, id);
+        schedule_save_mapper.Schedule_Save(name, date, schedule, id,font,size,isbold,isitalic,color);
     }
 }

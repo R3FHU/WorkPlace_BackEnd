@@ -24,8 +24,14 @@ public class Schedule_Save_Controller {
         String name = schedule.getName();
         LocalDateTime date = schedule.getDate();
         String content = schedule.getSchedule();
+        String font = schedule.getFont();
+        String size = schedule.getSize();
+        String position = schedule.getPosition();
+        Boolean isbold = schedule.getIsbold();
+        Boolean isitalic = schedule.getIsitalic();
+        String color = schedule.getColor();
         try{
-            schedule_save_service.Schedule_Save(name, date, content);
+            schedule_save_service.Schedule_Save(name, date, content,font,size,position,isbold,isitalic,color);
         return new Response<>(ResponseStatus.SUCCESS,"成功啦！",schedule.getId());
         }catch(Exception e){
             return new Response<>(ResponseStatus.INTERNAL_ERROR,e.getMessage(),null);
