@@ -7,5 +7,5 @@ import java.time.LocalDateTime;
 
 @Mapper
 public interface Schedule_Save_Mapper {
-    int Schedule_Save(@Param("name") String name, @Param("date") LocalDateTime date, @Param("schedule") String schedule, @Param("id") String id,@Param("font") String font,@Param("size")String size,@Param("isbold")Boolean isbold,@Param("isitalic")Boolean isitalic,@Param("color")String color);
+    void Schedule_Save(@Param("name") String name, @Param("date") LocalDateTime date, @Param("schedule") String schedule, @Param("id") String id,@Param("font") String font,@Param("size")String size,@Param("isbold")Boolean isbold,@Param("isitalic")Boolean isitalic,@Param("color")String color);
 }

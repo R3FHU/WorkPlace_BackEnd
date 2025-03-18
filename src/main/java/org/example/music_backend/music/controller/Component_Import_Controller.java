@@ -19,7 +19,7 @@ import java.util.regex.Pattern;
 
 @RestController
 public class Component_Import_Controller {
-    @PostMapping("/component/export")
+    @PostMapping("/component/import")
     public Response<List<Map<String,Integer>>> exportComponent(@RequestPart("file") MultipartFile File) {
         if (File.isEmpty()) {
             return new Response<>(ResponseStatus.BAD_REQUEST,"文件不能为空！",null);
