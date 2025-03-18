@@ -22,13 +22,13 @@ public class Component_Export_Controller {
             Integer Exist=0;
             Integer Position_X=0;
             Integer Position_Y=0;
-            Integer Size=0;
+            Integer Size=0;//初始化变量
             for (Map<String, Integer> component : components) {
                 Serial_Number = component.get("Serial_Number");
                 Exist = component.get("Exist");
                 Position_X = component.get("Position_X");
                 Position_Y = component.get("Position_Y");
-                Size = component.get("Size");
+                Size = component.get("Size");//解析json对象
                 if (Serial_Number == null || Exist == null || Position_X == null || Position_Y == null || Size == null) {
                     return new Response<>(ResponseStatus.BAD_REQUEST, "缺少必要的字段", 0);
                 }
@@ -36,14 +36,14 @@ public class Component_Export_Controller {
                         .append("Exist: ").append(Exist).append(" ")
                         .append("Position_X: ").append(Position_X).append(" ")
                         .append("Position_Y: ").append(Position_Y).append(" ")
-                        .append("Size: ").append(Size).append(lineSeparator);
+                        .append("Size: ").append(Size).append(lineSeparator);//拼接文件内容
             }
             byte[] bytes = comment.toString().getBytes();
             response.setContentType("application/octet-stream");
             response.setHeader("Content-Disposition", "attachment; filename=\"设置.workplace\"");
-            response.setContentLength(bytes.length);
+            response.setContentLength(bytes.length);//触发浏览器自动下载
             try (OutputStream os = response.getOutputStream()) {
-                os.write(bytes);
+                os.write(bytes);//写入文件
                 return new Response<>(ResponseStatus.SUCCESS,"成功啦",1);
             }catch(Exception e){
                 return new Response<>(ResponseStatus.BAD_REQUEST,"生成文件时出错",0);

@@ -42,7 +42,7 @@ public class Component_Import_Controller {
 
             while ((line = reader.readLine()) != null) {
                 lineNumber++;
-                String trimmedLine = line.trim();
+                String trimmedLine = line.trim();//删除多余空格
                 // 跳过空行
                 if (trimmedLine.isEmpty()) continue;
                 Matcher matcher = LINE_PATTERN.matcher(trimmedLine);
@@ -60,7 +60,7 @@ public class Component_Import_Controller {
                     component.put("Position_X", Integer.parseInt(matcher.group(3)));
                     component.put("Position_Y", Integer.parseInt(matcher.group(4)));
                     component.put("Size", Integer.parseInt(matcher.group(5)));
-                    components.add(component);
+                    components.add(component);//数据写入
                 } catch (NumberFormatException e) {
                     return new Response<>(
                             ResponseStatus.BAD_REQUEST,
