@@ -2,8 +2,8 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="org.example.music_backend.music.mapper.Music_List_Mapper">
 
-    <select id="Get_Music_List"  resultType="java.lang.String">
-        SELECT name FROM music LIMIT #{offset}, #{size}
+    <select id="Get_Music_List"  resultType="org.example.music_backend.music.model.Music">
+        SELECT * FROM music LIMIT #{offset}, #{size}
     </select>
     <select id="Get_Music_List_Count" resultType="int">
         SELECT COUNT(*) FROM music
